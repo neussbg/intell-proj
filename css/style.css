@@ -15,6 +15,27 @@
 
 /*** Spinner End ***/
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #e6f0ff; /* Нежно-голубой фон */
+  color: #5a5a5a; /* Серый цвет текста */
+}
+
+.text-secondary {
+  color: #5a5a5a !important;
+}
+
+.text-logo {
+  color: #2962ff !important;
+}
+
+.footer-value:hover {
+  color: #2962ff !important;
+}
+
 /*** Button Start ***/
 .btn {
   font-weight: 600;
@@ -109,14 +130,14 @@
 
 .navbar .navbar-nav .nav-link {
   padding: 10px;
-  color: var(--bs-white);
+  color: #5a5a5a !important;
   font-size: 18px;
   outline: none;
 }
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-  color: var(--bs-secondary) !important;
+  color: #2962ff !important;
 }
 
 .navbar .dropdown-toggle::after {
@@ -302,12 +323,26 @@
   background-size: cover;
 }
 
+.page-header-test {
+  background-size: cover;
+}
+
 .page-header .breadcrumb-item + .breadcrumb-item::before {
+  color: var(--bs-white);
+}
+
+.page-header-test .breadcrumb-item + .breadcrumb-item::before {
   color: var(--bs-white);
 }
 
 .page-header .breadcrumb-item,
 .page-header .breadcrumb-item a {
+  font-size: 18px;
+  color: var(--bs-white);
+}
+
+.page-header-test .breadcrumb-item,
+.page-header-test .breadcrumb-item a {
   font-size: 18px;
   color: var(--bs-white);
 }
@@ -625,16 +660,6 @@
   z-index: -1;
 }
 
-.contact-map {
-  background: #26d48c;
-}
-
-.contact-form {
-  background: #26d48c;
-}
-
-/*** Contact End ***/
-
 /*** Footer Start ***/
 
 .footer .short-link a,
@@ -650,7 +675,7 @@
 }
 
 .footer .hightech-link a:hover {
-  background: var(--bs-secondary);
+  background: #2962ff;
   border: 0;
 }
 
@@ -660,3 +685,61 @@
 }
 
 /*** Footer End ***/
+
+.breadcrumb-item__value:hover {
+  color: #2962ff !important;
+}
+
+.breadcrumb-item__active {
+  color: #2962ff !important;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #2962ff !important;
+  border-color: #2962ff !important;
+  box-shadow: none !important;
+}
+
+.btn-secondary:hover {
+  background-color: #2f4c9a !important;
+  border-color: #2f4c9a !important;
+}
+
+.telephone {
+  color: #5a5a5a;
+}
+
+.telephone:hover {
+  color: #2f4c9a;
+}
+
+.carousel-control-prev:hover {
+  background-color: #2f4c9a !important;
+}
+
+.carousel-control-next:hover {
+  background-color: #2f4c9a !important;
+}
+
+.contact-form button:disabled {
+  background-color: #aaaaaa;
+  color: #ffffff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.success-btn {
+  background: #2962ff; /* Электрик-синий */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  color: white;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.success-btn:hover {
+  background: #1a4bbb;
+  color: white;
+}

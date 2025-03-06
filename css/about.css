@@ -1,0 +1,88 @@
+.page-header-test {
+  text-align: center;
+  padding: 80px 0;
+  margin-bottom: 30px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../img/contact-us.png);
+}
+
+.page-header-test h1 {
+  color: #fff; /* Электрик-синий для заголовков */
+  margin-bottom: 15px;
+}
+
+.page-header-test p {
+  color: #5a5a5a; /* Серый текст подзаголовков */
+}
+
+.about-section,
+.key-advantages {
+  padding: 60px 0;
+}
+
+.about-section h5,
+.key-advantages h5 {
+  color: #2962ff; /* Электрик-синий акценты */
+}
+
+.contact-info,
+.key-advantages .bg-white {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contact-info:hover,
+.key-advantages .bg-white:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.contact-info h4,
+.contact-info p,
+.contact-info a,
+.key-advantages .bg-white h5,
+.key-advantages .bg-white p,
+.key-advantages .bg-white i {
+  color: #5a5a5a;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  color: #5a5a5a;
+  background-color: #ffffff;
+}
+
+.contact-form button {
+  background: #2962ff; /* Электрик-синий */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  color: white;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #1a4bbb;
+  color: white;
+}
+
+footer {
+  background-color: #e6f0ff;
+  color: #5a5a5a;
+  padding: 40px 0;
+}
+
+footer a {
+  color: #2962ff;
+  text-decoration: none;
+}

@@ -1,0 +1,24 @@
+.page-header-test {
+  text-align: center;
+  padding: 80px 0;
+  margin-bottom: 30px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../img/contact-us.png);
+}
+
+.page-header-test h1 {
+  color: #2962ff; /* Электрик-синий для заголовков */
+  margin-bottom: 15px;
+}
+
+.page-header-test p {
+  color: #5a5a5a; /* Серый текст подзаголовков */
+}
+
+.services-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.services-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
