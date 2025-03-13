@@ -1,99 +1,33 @@
-(function ($) {
+document.addEventListener("DOMContentLoaded", function () {
   "use strict";
-
   // Initiate the wowjs
-  new WOW().init();
+  if (typeof WOW !== "undefined") {
+    new WOW().init();
+  }
 
-  // Back to top button
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-      $(".back-to-top").fadeIn("slow");
+  // Кнопка поднятия страницы
+  const backToTopButton = document.querySelector(".back-to-top");
+
+  // Изначально скрыть кнопку
+  backToTopButton.style.display = "none";
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      backToTopButton.style.display = "flex";
     } else {
-      $(".back-to-top").fadeOut("slow");
+      backToTopButton.style.display = "none";
     }
   });
-  $(".back-to-top").click(function () {
-    $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
-    return false;
-  });
 
-  $(".team-carousel").owlCarousel({
-    autoplay: true,
-    smartSpeed: 1000,
-    center: false,
-    dots: false,
-    loop: true,
-    margin: 50,
-    nav: true,
-    navText: [
-      '<i class="bi bi-arrow-left"></i>',
-      '<i class="bi bi-arrow-right"></i>',
-    ],
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      768: {
-        items: 2,
-      },
-      992: {
-        items: 3,
-      },
-    },
-  });
-
-  // Testimonial carousel
-
-  $(".testimonial-carousel").owlCarousel({
-    autoplay: true,
-    smartSpeed: 1500,
-    center: true,
-    dots: true,
-    loop: true,
-    margin: 0,
-    nav: true,
-    navText: false,
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      576: {
-        items: 1,
-      },
-      768: {
-        items: 2,
-      },
-      992: {
-        items: 3,
-      },
-    },
-  });
-
-  // Fact Counter
-
-  $(document).ready(function () {
-    $(".counter-value").each(function () {
-      $(this)
-        .prop("Counter", 0)
-        .animate(
-          {
-            Counter: $(this).text(),
-          },
-          {
-            duration: 2000,
-            easing: "easeInQuad",
-            step: function (now) {
-              $(this).text(Math.ceil(now));
-            },
-          }
-        );
+  backToTopButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
   });
-})(jQuery);
 
-document.addEventListener("DOMContentLoaded", function () {
+  // Contact Form
   const form = document.getElementById("contact-form");
   const formControls = Array.from(
     document.querySelectorAll(".form-control")
@@ -101,29 +35,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitBtn = document.getElementById("submit-btn");
   const spinner = document.getElementById("spinner");
 
-  // Функция для проверки заполнения полей
-  const isFormValid = () => {
-    return formControls.every((field) => field.value.trim() !== "");
-  };
+  const isFormValid = () =>
+    formControls.every((field) => field.value.trim() !== "");
 
-  // Обновление состояния кнопки
-  const updateButton = () => {
-    submitBtn.disabled = !isFormValid();
-  };
+  const updateButton = () => (submitBtn.disabled = !isFormValid());
 
-  formControls.forEach((input) => {
-    input.addEventListener("input", updateButton);
-  });
+  formControls.forEach((input) =>
+    input.addEventListener("input", updateButton)
+  );
 
-  // Обработчик отправки формы
   form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // Предотвращаем перезагрузку страницы
+    e.preventDefault();
+    if (!isFormValid()) return;
 
-    if (!isFormValid()) {
-      return;
-    }
-
-    // Включаем спиннер и блокируем кнопку
     spinner.classList.add("show");
     submitBtn.disabled = true;
 
@@ -137,17 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       if (response.ok) {
-        // Проверяем, существует ли элемент модального окна
         const modalElement = document.getElementById("successModal");
         if (modalElement) {
-          // Инициализируем модальное окно
           const modal = new bootstrap.Modal(modalElement);
           modal.show();
         } else {
           console.error("Модальное окно не найдено!");
         }
-
-        // Очистка формы (опционально)
         form.reset();
       } else {
         alert("Ошибка отправки. Попробуйте позже.");
@@ -156,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Ошибка:", error);
       alert("Произошла ошибка. Проверьте подключение к интернету.");
     } finally {
-      // Удаляем спиннер и разблокируем кнопку
       spinner.classList.remove("show");
       submitBtn.disabled = false;
     }
