@@ -31,11 +31,25 @@ document.addEventListener("DOMContentLoaded", function () {
   ).filter((field) => !["_honeypot", "leaveblank"].includes(field.name));
   const agreementCheckbox = document.getElementById("agreement");
   const submitBtn = document.getElementById("submit-btn");
+  const isFieldValid = (field) => {
+    const value = field.value.trim();
+    const { name } = field;
+
+    if (name === "name") {
+      return /^[a-zA-Zа-яА-Я\s]+$/.test(value);
+    }
+    if (name === "phone") {
+      // Регулярное выражение для проверки российских номеров: +7, 7 или 8, затем 10 цифр
+      return /^(?:\+7|7|8)\d{10}$/.test(value);
+    }
+    if (name === "email") {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+    return value !== "";
+  };
 
   const isFormValid = () => {
-    const allFieldsValid = formControls.every(
-      (field) => field.value?.trim() !== ""
-    );
+    const allFieldsValid = formControls.every(isFieldValid);
     return allFieldsValid && agreementCheckbox.checked;
   };
 

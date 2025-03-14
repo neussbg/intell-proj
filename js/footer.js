@@ -64,7 +64,7 @@ class FooterComponent extends HTMLElement {
                 <i class="fas fa-phone-alt me-2"></i>
                 <a href="tel:+79887700010" class="telephone">+7 (988) 770 00 10</a>
               </p>
-              <p><i class="fas fa-envelope me-2"></i>ioffice@integra-marine.ru</p>
+              <p><i class="fas fa-envelope me-2"></i>office@integra-marine.ru</p>
             </div>
           </div>
         </div>
