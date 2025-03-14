@@ -22,7 +22,7 @@ class MyComponent extends HTMLElement {
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light py-0">
             <a href="main.html" class="navbar-brand d-flex align-items-center">
-                <img src="img/logo.png" class="img-fluid" alt="logo" style="max-width: 50px; margin-right: 10px;">
+                <img src="img/logo.svg" class="img-fluid" alt="logo" style="max-width: 50px; margin-right: 10px;">
                 <h1 class="text-primary fw-bold mb-0">
                     Integra<span style="color: #2962FF;">Marine</span>
                 </h1>
