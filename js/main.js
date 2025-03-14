@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
+
   // Initiate the wowjs
   if (typeof WOW !== "undefined") {
     new WOW().init();
@@ -7,10 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Кнопка поднятия страницы
   const backToTopButton = document.querySelector(".back-to-top");
-
-  // Изначально скрыть кнопку
   backToTopButton.style.display = "none";
-
   window.addEventListener("scroll", function () {
     if (window.scrollY > 300) {
       backToTopButton.style.display = "flex";
@@ -18,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
       backToTopButton.style.display = "none";
     }
   });
-
   backToTopButton.addEventListener("click", function (e) {
     e.preventDefault();
     window.scrollTo({
@@ -32,22 +29,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const formControls = Array.from(
     document.querySelectorAll(".form-control")
   ).filter((field) => !["_honeypot", "leaveblank"].includes(field.name));
+  const agreementCheckbox = document.getElementById("agreement");
   const submitBtn = document.getElementById("submit-btn");
-  const spinner = document.getElementById("spinner");
 
-  const isFormValid = () =>
-    formControls.every((field) => field.value.trim() !== "");
+  const isFormValid = () => {
+    const allFieldsValid = formControls.every(
+      (field) => field.value?.trim() !== ""
+    );
+    return allFieldsValid && agreementCheckbox.checked;
+  };
 
-  const updateButton = () => (submitBtn.disabled = !isFormValid());
+  const updateButton = () => {
+    submitBtn.disabled = !isFormValid();
+  };
 
   formControls.forEach((input) =>
-    input.addEventListener("input", updateButton)
+    input?.addEventListener("input", updateButton)
   );
+  agreementCheckbox?.addEventListener("change", updateButton);
 
-  form.addEventListener("submit", async (e) => {
+  form?.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!isFormValid()) return;
 
+    const spinner = document.getElementById("spinner");
     spinner.classList.add("show");
     submitBtn.disabled = true;
 

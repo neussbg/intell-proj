@@ -1,0 +1,52 @@
+.page-header-test {
+  text-align: center;
+  padding: 80px 0;
+  margin-bottom: 30px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../img/contact-us.png);
+}
+
+.page-header-test h1 {
+  color: #2962ff; /* Электрик-синий для заголовков */
+  margin-bottom: 15px;
+}
+
+.page-header-test p {
+  color: #5a5a5a; /* Серый текст подзаголовков */
+}
+
+.agreement-container {
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+h1,
+h2 {
+  margin-top: 20px;
+  font-size: 1.5em; /* Уменьшен размер шрифта для заголовков */
+}
+p,
+ul {
+  text-align: justify;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+footer {
+  background-color: #e6f0ff;
+  color: #5a5a5a;
+  padding: 40px 0;
+}
+
+footer a {
+  color: #2962ff;
+  text-decoration: none;
+}

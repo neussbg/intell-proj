@@ -126,6 +126,21 @@ body {
 /*** Navbar Start ***/
 .navbar .navbar-nav {
   padding: 15px 0;
+  white-space: nowrap; /* Запрещает перенос текста на новую строку */
+}
+
+.navbar-brand {
+  margin-right: 10px !important;
+}
+
+.navbar-nav {
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+  color: #2962ff !important;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -133,6 +148,7 @@ body {
   color: #5a5a5a !important;
   font-size: 18px;
   outline: none;
+  white-space: nowrap; /* Запрещает перенос текста на новую строку */
 }
 
 .navbar .navbar-nav .nav-link:hover,
@@ -147,6 +163,28 @@ body {
   font-weight: 900;
   vertical-align: middle;
   margin-left: 8px;
+}
+
+.navbar .d-flex.align-items-center {
+  margin: 0;
+}
+
+.navbar-nav {
+  flex-grow: 1; /* Дает больше места для элементов навигации */
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start; /* Выровнять элементы влево */
+}
+
+.navbar-nav .nav-link {
+  flex-shrink: 0; /* Предотвращает сжатие при изменении ширины экрана */
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #2962ff !important;
 }
 
 @media (min-width: 992px) {
@@ -742,4 +780,29 @@ body {
 .success-btn:hover {
   background: #1a4bbb;
   color: white;
+}
+
+.form-control-checkbox {
+  padding: 0 !important;
+  background: none !important;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-control-checkbox-input {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+.form-control-checkbox-label {
+  margin-left: 10px;
+}
+
+@media (max-width: 1400px) {
+  .telephone-text {
+    display: none !important; /* Скрываем текстовые детали, оставляя иконку */
+  }
 }
