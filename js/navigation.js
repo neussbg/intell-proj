@@ -46,20 +46,6 @@ class MyComponent extends HTMLElement {
                     <a id="nav-services" href="services.html" class="nav-item nav-link">Услуги</a>
                     <a id="nav-contact" href="contact.html" class="nav-item nav-link">Контакты</a>
 
-        <div class="d-none d-xl-flex flex-shrink-0" style="margin-left:40px;">
-        <div id="phone-tada" class="d-flex align-items-center justify-content-right me-4">
-          <a href="tel:+79887700010" class="position-relative">
-            <i class="fa fa-phone-alt text-primary fa-2x"></i>
-            <div class="position-absolute" style="top: -7px; left: 20px">
-              <span><i class="fa fa-comment-dots text-secondary"></i></span>
-            </div>
-          </a>
-        </div>
-        <div class="d-flex flex-column pe-4 telephone-text">
-          <span class="text-primary">Остались вопросы?</span>
-          <span class="text-secondary">Позвоните: +7 (988) 770 00 10</span>
-        </div>
-            </div>
                 </div>
         </nav>
     </div>

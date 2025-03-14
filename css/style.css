@@ -173,7 +173,7 @@ body {
   flex-grow: 1; /* Дает больше места для элементов навигации */
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start; /* Выровнять элементы влево */
+  justify-content: center; /* Выровнять элементы влево */
 }
 
 .navbar-nav .nav-link {

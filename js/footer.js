@@ -60,10 +60,6 @@ class FooterComponent extends HTMLElement {
               <p class="mb-2">
                 <i class="fas fa-map-marker-alt me-2"></i>г. Новороссийск, ул. Индустриальная, 8
               </p>
-              <p class="mb-2">
-                <i class="fas fa-phone-alt me-2"></i>
-                <a href="tel:+79887700010" class="telephone">+7 (988) 770 00 10</a>
-              </p>
               <p><i class="fas fa-envelope me-2"></i>office@integra-marine.ru</p>
             </div>
           </div>
